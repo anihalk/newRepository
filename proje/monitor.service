@@ -1,0 +1,12 @@
+[Unit]
+Description=Directory Monitor Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/ubuntu/bsm/monitor.py
+Restart=always
+User=ubuntu
+WorkingDirectory=/home/ubuntu/bsm
+
+[Install]
+WantedBy=multi-user.target

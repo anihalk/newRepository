@@ -1,0 +1,21 @@
+mkdir -p /home/ubuntu/bsm/logs
+mkdir -p /home/ubuntu/bsm/test
+
+
+sudo nano /etc/systemd/system/monitor.service
+
+python3 /home/ubuntu/bsm/monitor.py
+
+
+sudo systemctl daemon-reload
+sudo systemctl enable monitor.service
+sudo systemctl start monitor.service
+
+
+sudo systemctl status monitor.service
+
+
+touch /home/ubuntu/bsm/test/example.txt
+rm /home/ubuntu/bsm/test/example.txt
+
+cat /home/ubuntu/bsm/logs/changes.json
